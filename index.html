@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoPrime | Sistema de Gestão</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+
+                <div class="logo-text">
+                    <h2>AutoPrime</h2>
+                    <span>Gestão de concessionária</span>
+                </div>
+            </div>
+
+            <div class="menu-titulo">MENU PRINCIPAL</div>
+
+            <nav class="menu">
+
+                <button class="menu-item ativo" onclick="navegar(this, 'inicio')">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Painel principal</span>
+                </button>
+
+                <button class="menu-item" onclick="navegar(this, 'veiculos')">
+                    <i class="fa-solid fa-car"></i>
+                    <span>Veículos</span>
+                </button>
+
+                <button class="menu-item" onclick="navegar(this, 'clientes')">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clientes</span>
+                </button>
+
+                <button class="menu-item" onclick="navegar(this, 'vendas')">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Vendas</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-bottom-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <strong>AutoPrime</strong>
+                    <span>Sistema administrativo</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <div class="topbar-titulo">
+                    <span class="topbar-subtitulo">SISTEMA DE GERENCIAMENTO</span>
+                    <h1>Gestão da concessionária</h1>
+                    <p>Bem-vindo ao painel de controle da AutoPrime.</p>
+                </div>
+
+                <div class="usuario">
+                    <div class="usuario-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="usuario-info">
+                        <strong>Administrador</strong>
+                        <span>AutoPrime</span>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- O JAVASCRIPT CARREGA AS PÁGINAS AQUI -->
+            <section id="conteudo" class="conteudo">
+                <div class="carregando">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Carregando sistema...
+                </div>
+            </section>
+
+            <footer class="rodape">
+                <span>© 2026 AutoPrime</span>
+                <span>Sistema de gerenciamento de concessionária</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script>
+        function navegar(botao, pagina) {
+            document.querySelectorAll(".menu-item").forEach(item => {
+                item.classList.remove("ativo");
+            });
+
+            botao.classList.add("ativo");
+
+            mostrarPagina(pagina);
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
