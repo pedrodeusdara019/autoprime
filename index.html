@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f6f8">
+
   <title>AutoPrime | Gestão da loja</title>
+
   <link rel="stylesheet" href="./style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="./config.js" defer></script>
   <script src="./script.js" defer></script>
 </head>
+
 <body>
   <header class="topo">
     <div class="topo-inner">
@@ -15,18 +21,30 @@
         <span class="marca-icone">A</span>
         <span>AutoPrime</span>
       </a>
+
+      <div class="topo-acoes">
+        <span class="submarca">Controle simples da sua loja</span>
+
+        <button id="sair" class="botao secundario" type="button" hidden>
+          Sair da conta
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="menu" aria-label="Navegação principal">
+  <nav class="menu" aria-label="Navegação principal" hidden>
     <button class="aba ativa" data-page="inicio" type="button">Início</button>
     <button class="aba" data-page="veiculos" type="button">Veículos</button>
     <button class="aba" data-page="clientes" type="button">Clientes</button>
     <button class="aba" data-page="vendas" type="button">Vendas</button>
   </nav>
 
-  <main id="app" class="conteudo" aria-live="polite"></main>
+  <main id="autenticacao" class="autenticacao" aria-live="polite"></main>
 
-  <footer>AutoPrime</footer>
+  <main id="app" class="conteudo" aria-live="polite" hidden></main>
+
+  <footer id="rodape">
+    AutoPrime · Faça login para acessar seus dados.
+  </footer>
 </body>
 </html>
